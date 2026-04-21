@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ECPI University – Lake Mary Scholarships</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:      #1a5fa8;
+    --navy-dark: #0d3d6e;
+    --orange:    #5db8e8;
+    --orange-dk: #3a9fd4;
+    --white:     #ffffff;
+    --offwhite:  #f4f6f9;
+    --light:     #e4eff8;
+    --border:    #c8d8ea;
+    --text:      #1a2535;
+    --muted:     #5a6a7e;
+    --green:     #1a7a4a;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    background: var(--offwhite);
+    color: var(--text);
+    line-height: 1.65;
+    font-size: 15px;
+  }
+
+  /* HEADER */
+  header {
+    background: var(--navy-dark);
+    color: var(--white);
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+  }
+  header::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--orange);
+  }
+  .header-inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 2.8rem 1.5rem 2.4rem;
+    position: relative;
+    z-index: 1;
+  }
+  header .eyebrow {
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 0.6rem;
+  }
+  header h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(1.7rem, 4vw, 2.6rem);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 0.7rem;
+    color: var(--white);
+  }
+  header h1 span { color: var(--orange); }
+  header .sub {
+    font-size: 0.97rem;
+    color: rgba(255,255,255,0.72);
+    max-width: 580px;
+    font-weight: 300;
+  }
+  header::before {
+    content: '';
+    position: absolute;
+    top: 0; right: -60px;
+    width: 340px; height: 100%;
+    background: rgba(255,255,255,0.03);
+    transform: skewX(-12deg);
+  }
+
+  /* STICKY NAV */
+  nav.site-nav {
+    background: var(--navy);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.25);
+  }
+  nav.site-nav ul {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    list-style: none;
+    overflow-x: auto;
+    padding: 0 1rem;
+    scrollbar-width: none;
+  }
+  nav.site-nav ul::-webkit-scrollbar { display: none; }
+  nav.site-nav ul li a {
+    display: block;
+    padding: 0.9rem 1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    white-space: nowrap;
+    border-bottom: 3px solid transparent;
+    transition: color 0.18s, border-color 0.18s;
+    cursor: pointer;
+  }
+  nav.site-nav ul li a:hover {
+    color: var(--white);
+    border-bottom-color: var(--orange);
+  }
+
+  /* MAIN */
+  main {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 5rem;
+  }
+
+  .section-block { margin-bottom: 3.5rem; scroll-margin-top: 52px; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    margin-bottom: 1.4rem;
+    padding-bottom: 0.7rem;
+    border-bottom: 2px solid var(--border);
+  }
+  .section-accent {
+    width: 4px;
+    height: 1.8rem;
+    border-radius: 2px;
+    background: var(--orange);
+    flex-shrink: 0;
+  }
+  .section-header h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--navy);
+    letter-spacing: -0.01em;
+  }
+  .section-header .count {
+    margin-left: auto;
+    font-size: 0.73rem;
+    font-weight: 600;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+  }
+
+  /* PROGRAM BUTTONS */
+  .program-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 0.75rem;
+    max-width: 860px;
+  }
+  .program-buttons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: var(--navy);
+    color: var(--white);
+    padding: 0.9rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    transition: background 0.18s, transform 0.15s;
+    border-left: 3px solid var(--orange);
+    cursor: pointer;
+  }
+  .program-buttons a:hover {
+    background: var(--orange);
+    color: var(--navy-dark);
+    transform: translateY(-2px);
+  }
+
+  /* SCHOLARSHIP GRID */
+  .scholarship-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 1rem;
+  }
+
+  .card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--navy);
+    border-radius: 4px;
+    padding: 1.2rem 1.3rem;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .card:hover {
+    box-shadow: 0 6px 22px rgba(0,56,101,0.12);
+    transform: translateY(-2px);
+  }
+  .card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 700;
+    margin-bottom: 0.45rem;
+    line-height: 1.35;
+  }
+  .card h3 a {
+    color: var(--navy);
+    text-decoration: none;
+  }
+  .card h3 a:hover {
+    color: var(--orange);
+    text-decoration: underline;
+  }
+  .card p.desc {
+    font-size: 0.82rem;
+    color: var(--muted);
+    margin-bottom: 0.8rem;
+    line-height: 1.55;
+  }
+  .award-badge {
+    display: inline-block;
+    background: var(--offwhite);
+    border: 1px solid var(--border);
+    color: var(--navy);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding: 0.2rem 0.6rem;
+    border-radius: 2px;
+  }
+
+  /* INTERNAL CARDS */
+  .internal-list { display: flex; flex-direction: column; gap: 0.75rem; }
+  .internal-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--orange);
+    border-radius: 4px;
+    padding: 1rem 1.25rem;
+  }
+  .internal-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 0.3rem;
+  }
+  .internal-card p {
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+  .internal-card ul {
+    font-size: 0.82rem;
+    color: var(--muted);
+    margin: 0.4rem 0 0 1.2rem;
+    line-height: 1.65;
+  }
+  .tag {
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.15rem 0.5rem;
+    border-radius: 2px;
+    margin-bottom: 0.4rem;
+    background: var(--navy);
+    color: var(--white);
+  }
+  .tag.orange { background: var(--orange); }
+
+  /* PAY SECTION */
+  .pay-section {
+    background: var(--navy-dark);
+    color: var(--white);
+    border-radius: 6px;
+    padding: 2.2rem 2.4rem;
+    margin-top: 1rem;
+  }
+  .pay-section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--white);
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 2px solid var(--orange);
+    display: inline-block;
+  }
+  .pay-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1rem;
+    margin-top: 1.2rem;
+  }
+  .pay-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-top: 3px solid var(--orange);
+    border-radius: 4px;
+    padding: 1.1rem 1.2rem;
+  }
+  .pay-card h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 0.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .pay-card p {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.68);
+    line-height: 1.6;
+  }
+  .pay-card a { color: #f0b080; text-decoration: underline; }
+
+  .intro-text {
+    font-size: 0.92rem;
+    color: var(--muted);
+    max-width: 720px;
+    margin-bottom: 1.4rem;
+    line-height: 1.7;
+  }
+
+  footer {
+    background: var(--navy-dark);
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.78rem;
+    border-top: 4px solid var(--orange);
+  }
+  footer a { color: rgba(255,255,255,0.75); }
+
+  @media (max-width: 620px) {
+    .scholarship-grid { grid-template-columns: 1fr; }
+    .pay-grid { grid-template-columns: 1fr; }
+    .program-buttons { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="eyebrow">ECPI University · Lake Mary Campus</div>
+    <h1>Scholarship <span>Resource Hub</span></h1>
+    <p class="sub">Going to college can be expensive, but there are many options available both nationwide and within the state of Florida to help lower or eliminate costs. Apply for as many scholarships as possible and remember to reapply each year.</p>
+  </div>
+</header>
+
+<nav class="site-nav">
+  <ul>
+    <li><a onclick="document.getElementById('home').scrollIntoView({behavior:'smooth'})">Home</a></li>
+    <li><a onclick="document.getElementById('ecpi').scrollIntoView({behavior:'smooth'})">ECPI Scholarships</a></li>
+    <li><a onclick="document.getElementById('nursing').scrollIntoView({behavior:'smooth'})">Nursing</a></li>
+    <li><a onclick="document.getElementById('dms').scrollIntoView({behavior:'smooth'})">Diagnostic Medical Sonography</a></li>
+    <li><a onclick="document.getElementById('pta').scrollIntoView({behavior:'smooth'})">Physical Therapy</a></li>
+    <li><a onclick="document.getElementById('cyber').scrollIntoView({behavior:'smooth'})">Cybersecurity</a></li>
+    <li><a onclick="document.getElementById('pay').scrollIntoView({behavior:'smooth'})">How to Pay</a></li>
+  </ul>
+</nav>
+
+<main>
+
+<section class="section-block" id="home">
+  <div class="section-header">
+    <div class="section-accent"></div>
+    <h2>Scholarship Programs</h2>
+  </div>
+  <p class="intro-text">Our financial assistance advisors can assist you in identifying and applying for these scholarship opportunities. Each scholarship has its own unique qualifying criteria — review each program below and contact our office with any questions.</p>
+  <div class="program-buttons">
+    <a onclick="document.getElementById('ecpi').scrollIntoView({behavior:'smooth'})">ECPI Scholarships</a>
+    <a onclick="document.getElementById('nursing').scrollIntoView({behavior:'smooth'})">Nursing</a>
+    <a onclick="document.getElementById('dms').scrollIntoView({behavior:'smooth'})">Diagnostic Medical Sonography</a>
+    <a onclick="document.getElementById('pta').scrollIntoView({behavior:'smooth'})">Physical Therapy</a>
+    <a onclick="document.getElementById('cyber').scrollIntoView({behavior:'smooth'})">Cybersecurity</a>
+  </div>
+</section>
+
+<section class="section-block" id="ecpi">
+  <div class="section-header">
+    <div class="section-accent"></div>
+    <h2>ECPI Scholarships</h2>
+    <span class="count">1 External · 6 Internal</span>
+  </div>
+  <p class="intro-text">ECPI University awards in excess of $14 million in scholarships each year. Applicants must have applied and been accepted for admissions to ECPI University and meet all entrance requirements.</p>
+
+  <div class="scholarship-grid" style="margin-bottom:1.5rem;">
+    <div class="card">
+      <span class="tag">External · Military</span>
+      <h3><a href="https://www.ecpi.edu/military/active-duty-scholarship" target="_blank">Active Duty Military Scholarship</a></h3>
+      <p class="desc">For eligible active duty service members and reservists who are also eligible for Tuition Assistance (TA). Effectively reduces tuition charges to the TA level of $250 per credit hour. Fees are not covered.</p>
+      <span class="award-badge">Up to TA Level · $250/cr. hr.</span>
+    </div>
+  </div>
+
+  <p style="font-family:'Montserrat',sans-serif;font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:var(--navy);margin-bottom:0.85rem;">Internal Institutional Scholarships — Administered Through Financial Assistance</p>
+  <div class="internal-list">
+    <div class="internal-card">
+      <span class="tag orange">Internal</span>
+      <h3>ECPI Armed Services Scholarship for Active Duty Service Members and Spouses</h3>
+      <p>Open to Active Duty, Reservists, National Guard, and their spouses pursuing undergraduate degrees. Award: $500.00 per semester / $1,000.00 per academic year. Available at all campus locations and online. Ask your admissions advisor for details.</p>
+    </div>
+    <div class="internal-card">
+      <span class="tag orange">Internal</span>
+      <h3>Graduation Scholarship Fund</h3>
+      <p>Auto-enrolled for all undergraduate Bachelor's, Associate's, or diploma students. Provides awards up to $1,000 applied first to reduce student loan debt in the final semester. To be eligible you must:</p>
+      <ul>
+        <li>Regularly attend full-time and attend at least 85% of all class time in your first semester</li>
+        <li>Make Satisfactory Progress as defined in the university catalog</li>
+        <li>Complete three financial literacy modules on ECPI's financial literacy platform</li>
+        <li>Have financial need as determined by the FAFSA</li>
+      </ul>
+      <p style="margin-top:0.5rem;">The following four scholarships below are available only for eligible programs: Associate Degree in Nursing · BSN (Traditional Track) · Diagnostic Medical Sonography · Medical Radiography · Physical Therapist Assistant · Practical Nursing</p>
+    </div>
+    <div class="internal-card">
+      <span class="tag">Internal · Eligible Programs Only</span>
+      <h3>Futures Scholarship</h3>
+      <p>The student's parents (one or both) do not have a post-secondary degree.</p>
+    </div>
+    <div class="internal-card">
+      <span class="tag">Internal · Eligible Programs Only</span>
+      <h3>Advancement Scholarship</h3>
+      <p>The student already holds a post-secondary certificate and/or degree.</p>
+    </div>
+    <div class="internal-card">
+      <span class="tag">Internal · Eligible Programs Only</span>
+      <h3>Working Parent Scholarship</h3>
+      <p>The student has dependents under the age of 18 living in the home.</p>
+    </div>
+    <div class="internal-card">
+      <span class="tag">Internal · Eligible Programs Only</span>
+      <h3>Opportunity Scholarship</h3>
+      <p>Assists students with demonstrated financial need. See your financial assistance advisor for eligibility requirements and award amounts.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-block" id="nursing">
+  <div class="section-header">
+    <div class="section-accent"></div>
+    <h2>Nursing Scholarships</h2>
+    <span class="count">27 Scholarships</span>
+  </div>
+  <p class="intro-text">Nurses are in great demand across the health care industry. To get the most financing for nursing school, apply for as many of these grants as possible and remember to reapply each year.</p>
+  <div class="scholarship-grid">
+
+    <div class="card">
+      <h3><a href="https://www.aamn.org/scholarships2026" target="_blank">American Assembly for Men in Nursing</a></h3>
+      <p class="desc">Two scholarships for current AAMN student members who are nursing undergraduates.</p>
+      <span class="award-badge">$1,000 each</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://nscda.org/grants-scholarships-awards/american-indian-medical-scholarship/" target="_blank">American Indian Medical Scholarship Program</a></h3>
+      <p class="desc">For students of American Indian descent pursuing careers in nursing and health care. Started in 1928 by the NSCDA; open to males and females.</p>
+      <span class="award-badge">Varies</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://e-anca.org/Scholarships" target="_blank">Army Nurse Corps Association Scholarship</a></h3>
+      <p class="desc">For US citizens in an accredited baccalaureate or graduate nursing or anesthesia program.</p>
+      <span class="award-badge">Varies</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://rehabnurse.org/membership/recognition/scholarship-opportunities" target="_blank">Association of Rehabilitation Nurses Scholarship</a></h3>
+      <p class="desc">For ARN members enrolled in a BSN or graduate nursing program with at least two years of rehabilitation nursing experience.</p>
+      <span class="award-badge">$1,500</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://aises.org/scholarships/" target="_blank">AISES Scholarships</a></h3>
+      <p class="desc">The American Indian Science and Engineering Society (AISES) is a nonprofit that supports Indigenous students in STEM fields. AISES offers multiple scholarships for enrolled citizens or descendants of federally/state recognized American Indian Tribes, Alaska Native Villages, Native Hawaiians, Pacific Islanders, or Indigenous persons of Canada.</p>
+      <span class="award-badge">Varies</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://www.avacaremedical.com/scholarship" target="_blank">AvaCare Medical Scholarship</a></h3>
+      <p class="desc">Annual award for a student pursuing a medical field degree who tells about an inspiring act of kindness.</p>
+      <span class="award-badge">$1,000</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://www.pilotinternational.org/grants-and-scholarships/" target="_blank">Becky Burrows Memorial Scholarship</a></h3>
+      <p class="desc">For students reentering the job market, beginning second careers, or improving professional skills in fields aligned with Pilot International's mission.</p>
+      <span class="award-badge">Up to $1,000/yr</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://www.pilotinternational.org/grants-and-scholarships/" target="_blank">Bob King Co-Pilot Memorial Scholarship</a></h3>
+      <p class="desc">Based on community service, financial need, and academic success. Renewable up to 3 additional years. Two scholarships awarded each year.</p>
+      <span class="award-badge">Up to $1,500/yr</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://www.dar.org/national-society/scholarships/nursing-medical-scholarships" target="_blank">Caroline E. Holt Nursing Scholarship</a></h3>
+      <p class="desc">One-time award for three students with financial need accepted or enrolled in an accredited nursing program. Requires letter of acceptance or transcript.</p>
+      <span class="award-badge">$2,500 · 3 Awards</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://www.ahna.org/Home/Resources/Scholarships-and-Awards" target="_blank">Charlotte McGuire Scholarship Program</a></h3>
+      <p class="desc">Supports holistic nursing through the American Holistic Nurses Association. For AHNA members with a current RN license at undergraduate and graduate levels.</p>
+      <span class="award-badge">$1,250</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://www.citizensbank.com/student-loans/scholarship.aspx" target="_blank">Citizens Bank Scholarship</a></h3>
+      <p class="desc">Monthly prize drawing and annual grand prize toward tuition. No essays required — enter to win.</p>
+      <span class="award-badge">Up to $15,000</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://www.courseyenterprises.com/scholarships" target="_blank">Coursey Enterprises</a></h3>
+      <p class="desc">Two scholarships per year (spring and fall) for first-year students enrolled in a registered nurse or licensed practical nurse program. Requires personal essay and photo.</p>
+      <span class="award-badge">$250</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://www.ena.org/foundation/scholarships" target="_blank">Emergency Nurses Association Foundation Scholarships</a></h3>
+      <p class="desc">Multiple scholarships for student ENA members. Minimum 3.0 GPA and two letters of recommendation required (one must be from an ENA member).</p>
+      <span class="award-badge">Varies</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://exceptionalnurse.com/scholarship.php" target="_blank">ExceptionalNurse.com</a></h3>
+      <p class="desc">For nursing students with a medically verified disability attending full time. Requires three letters of recommendation, an essay, and official transcripts.</p>
+      <span class="award-badge">$250–$500</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://fapscfoundation.org/scholarship-application" target="_blank">FAPSC Scholarship</a></h3>
+      <p class="desc">For qualifying students at FAPSC member schools pursuing career education. Based on applicant excellence.</p>
+      <span class="award-badge">$1,000</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://www.fnsna.org/2027-undergraduate-scholarship-application" target="_blank">Foundation of the NSNA Career Mobility Scholarship</a></h3>
+      <p class="desc">For both current nurses and nursing students through the National Student Nurses' Association.</p>
+      <span class="award-badge">$1,000–$2,500</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://www.floridanurse.org/page/AvailableGrantsScohlarships" target="_blank">Florida Nurses Foundation</a></h3>
+      <p class="desc">Trustees match applicants to multiple available scholarships and grants annually. No specific scholarship selection needed on the application.</p>
+      <span class="award-badge">Varies</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://nationalhispanichealthfoundation.org/health-professional-student-scholarship/" target="_blank">Hispanic Health Professional Student Scholarship</a></h3>
+      <p class="desc">For full-time Hispanic nursing students demonstrating leadership, a consistent academic track record, and sustained academic success.</p>
+      <span class="award-badge">$2,000–$5,000/yr · Up to 4 yrs</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://bhw.hrsa.gov/funding/apply-scholarship/nurse-corps" target="_blank">HRSA Nurse Corps Scholarship Program</a></h3>
+      <p class="desc">Covers tuition, fees, and other educational costs in exchange for a minimum 2-year full-time service commitment at an eligible facility with a critical nursing shortage.</p>
+      <span class="award-badge">Full Tuition + Stipend</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://www.dar.org/national-society/scholarships/nursing-medical-scholarships" target="_blank">Madeline Pickett (Halbert) Cogswell Nursing Scholarship</a></h3>
+      <p class="desc">For students accepted or enrolled in an accredited nursing school who are DAR members or eligible descendants. DAR member number required.</p>
+      <span class="award-badge">$2,500 · 2 Awards</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://nahnnet.org/Scholarships" target="_blank">National Association of Hispanic Nurses Scholarships</a></h3>
+      <p class="desc">For undergraduate and graduate NAHN members enrolled full time in accredited nursing programs. Requires two references, an essay, transcript, and resume/CV.</p>
+      <span class="award-badge">Up to $10,000</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://www.nbna.org/content.asp?contentid=82" target="_blank">National Black Nurses Association</a></h3>
+      <p class="desc">More than 20 scholarships for students at all levels (LPN to Doctorate). Must be a member of NBNA and a local chapter (or Direct Member if no chapter within 50 miles).</p>
+      <span class="award-badge">$1,000–$15,000</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://nurse.org/healthcare-leaders/" target="_blank">Nurse.org Healthcare Leaders Scholarship</a></h3>
+      <p class="desc">For US citizens at least 17 years of age with a GPA of 3.0 or higher entering or currently pursuing a nursing or medicine program.</p>
+      <span class="award-badge">$1,500</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://www.anurseiam.com/" target="_blank">Nurse I Am Scholarship</a></h3>
+      <p class="desc">Sponsored by Cherokee Uniforms. For students actively enrolled in an accredited undergraduate or graduate nurse education program within the 50 US states.</p>
+      <span class="award-badge">Varies</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://www.smartscholarship.org/smart?id=smart_index" target="_blank">SMART Scholarship-For-Service Program</a></h3>
+      <p class="desc">Full tuition, annual stipends, internships, and guaranteed Department of Defense employment for undergraduate, master's, and doctoral STEM students.</p>
+      <span class="award-badge">Full Tuition + Stipend</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://www.hemophiliafed.org/scholarships/" target="_blank">WPBDF's Academic Scholarship</a></h3>
+      <p class="desc">For students with a parent, sibling, or child with a bleeding disorder. Click the link for more scholarship opportunities through the Hemophilia Federation.</p>
+      <span class="award-badge">$3,000</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://scholarshipamerica.org/students/browse-scholarships/" target="_blank">Scholarship America</a></h3>
+      <p class="desc">A national nonprofit scholarship search platform offering access to hundreds of scholarships across fields of study. Browse and apply to opportunities matched to your background, interests, and program.</p>
+      <span class="award-badge">Varies · Multiple Awards</span>
+    </div>
+
+  </div>
+</section>
+
+<section class="section-block" id="dms">
+  <div class="section-header">
+    <div class="section-accent"></div>
+    <h2>Diagnostic Medical Sonography Scholarships</h2>
+    <span class="count">16 Scholarships</span>
+  </div>
+  <p class="intro-text">To get the most financing for sonography school, apply for as many of these grants as possible and remember to reapply each year.</p>
+  <div class="scholarship-grid">
+
+    <div class="card">
+      <h3><a href="https://foundation.asrt.org/what-we-do/scholarships/current-scholarships" target="_blank">American Society Radiologic Technologist Award</a></h3>
+      <p class="desc">For active ASRT members enrolled in an entry-level program focused on sonography or a closely related topic.</p>
+      <span class="award-badge">$4,000</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://www.avacaremedical.com/scholarship" target="_blank">AvaCare Medical Scholarship</a></h3>
+      <p class="desc">Annual award for a student pursuing a medical field degree who tells about an inspiring act of kindness.</p>
+      <span class="award-badge">$1,000</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://www.fastweb.com/college-scholarships/scholarships/188512-bb-imaging-sonography-student-scholarship" target="_blank">BB Imaging's Sonography Student Scholarship</a></h3>
+      <p class="desc">For students accepted or enrolled in a CAAHEP-accredited sonography program. Opens biannually with awards in spring and fall. Requires long-form answers about career choice and goals.</p>
+      <span class="award-badge">$500 · Biannual</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://www.pilotinternational.org/grants-and-scholarships/" target="_blank">Becky Burrows Memorial Scholarship</a></h3>
+      <p class="desc">For students reentering the job market or beginning second careers in Pilot International mission-aligned fields.</p>
+      <span class="award-badge">Up to $1,000/yr</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://www.pilotinternational.org/grants-and-scholarships/" target="_blank">Bob King Co-Pilot Memorial Scholarship</a></h3>
+      <p class="desc">Based on community service, financial need, and academic success. Renewable up to 3 additional years. Two scholarships awarded each year.</p>
+      <span class="award-badge">Up to $1,500/yr</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://www.citizensbank.com/student-loans/scholarship.aspx" target="_blank">Citizens Bank Scholarship</a></h3>
+      <p class="desc">Monthly prize drawing and annual grand prize toward tuition. No essays required — enter to win.</p>
+      <span class="award-badge">Up to $15,000</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://www.courseyenterprises.com/scholarships" target="_blank">Coursey Enterprises</a></h3>
+      <p class="desc">Two scholarships per year (spring and fall) for first-year students in nursing/allied health programs. Requires personal essay and photo.</p>
+      <span class="award-badge">$250</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://www.va.gov/education/other-va-education-benefits/stem-scholarship/" target="_blank">Edith Nourse Rogers STEM Scholarship</a></h3>
+      <p class="desc">For eligible Veterans using the Post-9/11 GI Bill or Fry Scholarship dependents training in high-demand STEM fields.</p>
+      <span class="award-badge">Up to $30,000</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://fapscfoundation.org/scholarship-application" target="_blank">FAPSC Scholarship</a></h3>
+      <p class="desc">For qualifying students at FAPSC member schools pursuing career education. Based on applicant excellence.</p>
+      <span class="award-badge">$1,000</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://nationalhispanichealthfoundation.org/health-professional-student-scholarship/" target="_blank">Hispanic Health Professional Student Scholarship</a></h3>
+      <p class="desc">For full-time Hispanic students demonstrating leadership and a consistent academic track record.</p>
+      <span class="award-badge">$2,000–$5,000/yr · Up to 4 yrs</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://hosa.org/scholarships/" target="_blank">HOSA Scholarships</a></h3>
+      <p class="desc">Multiple scholarships for HOSA members in sonography and ultrasound technology programs. A Tallo account is required to apply.</p>
+      <span class="award-badge">Varies</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://foundation.asrt.org/what-we-do/scholarships/current-scholarships" target="_blank">Jerman-Cahoon Student Scholarship</a></h3>
+      <p class="desc">For outstanding students in entry-level radiologic science programs including nuclear medicine, sonography, and radiation therapy.</p>
+      <span class="award-badge">$2,500</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://www.smartscholarship.org/smart?id=smart_index" target="_blank">SMART Scholarship-For-Service Program</a></h3>
+      <p class="desc">Full tuition, annual stipends, internships, and guaranteed DoD employment for undergraduate, master's, and doctoral STEM students.</p>
+      <span class="award-badge">Full Tuition + Stipend</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://foundation.asrt.org/what-we-do/scholarships" target="_blank">ASRT/SRT Foundation Scholarships</a></h3>
+      <p class="desc">Over 85 scholarships for radiologic science students of all types with one centralized application. Entry-level to professional levels supported.</p>
+      <span class="award-badge">Varies · 85+ Awards</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://www.hemophiliafed.org/scholarships/" target="_blank">WPBDF's Academic Scholarship</a></h3>
+      <p class="desc">For students with a parent, sibling, or child with a bleeding disorder. Click the link for more scholarship opportunities.</p>
+      <span class="award-badge">$3,000</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://scholarshipamerica.org/students/browse-scholarships/" target="_blank">Scholarship America</a></h3>
+      <p class="desc">A national nonprofit scholarship search platform offering access to hundreds of scholarships across fields of study. Browse and apply to opportunities matched to your background, interests, and program.</p>
+      <span class="award-badge">Varies · Multiple Awards</span>
+    </div>
+
+  </div>
+</section>
+
+<section class="section-block" id="pta">
+  <div class="section-header">
+    <div class="section-accent"></div>
+    <h2>Physical Therapy Scholarships</h2>
+    <span class="count">21 Scholarships</span>
+  </div>
+  <p class="intro-text">The rewards of helping someone regain their mobility are great. There are many options available to help lower or eliminate the cost of a physical therapy education.</p>
+  <div class="scholarship-grid">
+
+    <div class="card">
+      <h3><a href="https://www.apta.org/apta-and-you/honors-awards/mary-mcmillan-scholarship-award" target="_blank">APTA Mary McMillan Scholarship Award</a></h3>
+      <p class="desc">For multiple physical therapy students in the final year of their programs. Applicants must be nominated for the award.</p>
+      <span class="award-badge">Up to $5,000</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://www.apta.org/apta-and-you/honors-awards/minority-scholarship-award" target="_blank">APTA Minority Scholarship Award</a></h3>
+      <p class="desc">For minorities in their final year of a physical therapy program and faculty members pursuing postdoctoral physical therapy degrees.</p>
+      <span class="award-badge">Up to $5,000</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://nscda.org/student-resources/scholarship-opportunities/" target="_blank">American Indian Medical Scholarship Program</a></h3>
+      <p class="desc">For students of American Indian descent pursuing health care careers. Open to males and females.</p>
+      <span class="award-badge">Varies</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://www.avacaremedical.com/scholarship" target="_blank">AvaCare Medical Scholarship</a></h3>
+      <p class="desc">Annual award for a student pursuing a medical field degree who tells about an inspiring act of kindness.</p>
+      <span class="award-badge">$1,000</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://www.pilotinternational.org/grants-and-scholarships/" target="_blank">Becky Burrows Memorial Scholarship</a></h3>
+      <p class="desc">For students reentering the job market or beginning second careers in Pilot International mission-aligned fields.</p>
+      <span class="award-badge">Up to $1,000/yr</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://www.pilotinternational.org/grants-and-scholarships/" target="_blank">Bob King Co-Pilot Memorial Scholarship</a></h3>
+      <p class="desc">Based on community service, financial need, and academic success. Renewable up to 3 additional years. Two scholarships awarded each year.</p>
+      <span class="award-badge">Up to $1,500/yr</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://www.citizensbank.com/student-loans/scholarship.aspx" target="_blank">Citizens Bank Scholarship</a></h3>
+      <p class="desc">Monthly prize drawing and annual grand prize toward tuition. No essays required — enter to win.</p>
+      <span class="award-badge">Up to $15,000</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://www.courseyenterprises.com/scholarships" target="_blank">Coursey Enterprises</a></h3>
+      <p class="desc">Two scholarships per year (spring and fall) for first-year students in nursing/allied health programs.</p>
+      <span class="award-badge">$250</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://rizing-tide.com/scholarships/crest/" target="_blank">Crest Scholarship</a></h3>
+      <p class="desc">For BIPOC students pursuing a physical therapy degree entering their first or second year of PT school, or PTAs entering a PTA-to-DPT bridge program.</p>
+      <span class="award-badge">Varies</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://www.dar.org/national-society/scholarships/nursing-medical-scholarships" target="_blank">DAR Occupational/Physical Therapy Scholarship</a></h3>
+      <p class="desc">For students with financial need accepted or attending an accredited school of occupational or physical therapy. Two awards given.</p>
+      <span class="award-badge">$2,000 · 2 Awards</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://www.va.gov/education/other-va-education-benefits/stem-scholarship/" target="_blank">Edith Nourse Rogers STEM Scholarship</a></h3>
+      <p class="desc">For eligible Veterans using the Post-9/11 GI Bill or Fry Scholarship dependents training in high-demand STEM fields.</p>
+      <span class="award-badge">Up to $30,000</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://fapscfoundation.org/scholarship-application" target="_blank">FAPSC Scholarship</a></h3>
+      <p class="desc">For qualifying students at FAPSC member schools pursuing career education. Based on applicant excellence.</p>
+      <span class="award-badge">$1,000</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://nationalhispanichealthfoundation.org/health-professional-student-scholarship/" target="_blank">Hispanic Health Professional Student Scholarship</a></h3>
+      <p class="desc">For full-time Hispanic students demonstrating leadership and a consistent academic track record.</p>
+      <span class="award-badge">$2,000–$5,000/yr · Up to 4 yrs</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://hosa.org/scholarships/" target="_blank">HOSA Scholarships</a></h3>
+      <p class="desc">Multiple scholarships for HOSA members in allied health fields. A Tallo account is required to apply.</p>
+      <span class="award-badge">Varies</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://mwinsports.org/awards-scholarships-grants/" target="_blank">MWISM Foundation Scholarship</a></h3>
+      <p class="desc">For minority women pursuing degrees in sports-related fields including sports medicine, with a 3.0 GPA. Renewable up to three additional years.</p>
+      <span class="award-badge">$500–$1,000</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://www.nsca.com/about-us/nsca-foundation/scholarships/" target="_blank">NSCA Foundation Challenge Scholarships</a></h3>
+      <p class="desc">For NSCA members seeking an undergraduate or graduate degree in a strength and conditioning-related field.</p>
+      <span class="award-badge">$2,000</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://www.nsca.com/about-us/nsca-foundation/scholarships/" target="_blank">NSCA Foundation Minority Scholarships</a></h3>
+      <p class="desc">For ethnic minorities ages 17 and older pursuing an undergraduate or graduate degree in the strength and conditioning field.</p>
+      <span class="award-badge">$2,000</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://www.nsca.com/about-us/nsca-foundation/scholarships/" target="_blank">NSCA Foundation Women's Scholarships</a></h3>
+      <p class="desc">For those who identify as female, ages 17 and older, pursuing an undergraduate or graduate degree in the strength and conditioning field.</p>
+      <span class="award-badge">$2,000</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://www.smartscholarship.org/smart?id=smart_index" target="_blank">SMART Scholarship-For-Service Program</a></h3>
+      <p class="desc">Full tuition, annual stipends, internships, and guaranteed DoD employment for undergraduate, master's, and doctoral STEM students.</p>
+      <span class="award-badge">Full Tuition + Stipend</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://www.hemophiliafed.org/scholarships/" target="_blank">WPBDF's Academic Scholarship</a></h3>
+      <p class="desc">For students with a parent, sibling, or child with a bleeding disorder. Click the link for more scholarship opportunities.</p>
+      <span class="award-badge">$3,000</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://scholarshipamerica.org/students/browse-scholarships/" target="_blank">Scholarship America</a></h3>
+      <p class="desc">A national nonprofit scholarship search platform offering access to hundreds of scholarships across fields of study. Browse and apply to opportunities matched to your background, interests, and program.</p>
+      <span class="award-badge">Varies · Multiple Awards</span>
+    </div>
+
+  </div>
+</section>
+
+<section class="section-block" id="cyber">
+  <div class="section-header">
+    <div class="section-accent"></div>
+    <h2>Cybersecurity Scholarships</h2>
+    <span class="count">14 Scholarships</span>
+  </div>
+  <p class="intro-text">Living in the age of data means a wealth of information at our fingertips — but it can be detrimental in the wrong hands. Numerous financial aid options are available nationwide and within Florida to reduce or eliminate education expenses for cybersecurity students.</p>
+  <div class="scholarship-grid">
+
+    <div class="card">
+      <h3><a href="https://aises.org/scholarships/" target="_blank">AISES Scholarships</a></h3>
+      <p class="desc">The American Indian Science and Engineering Society (AISES) is a nonprofit that supports Indigenous students in STEM fields. AISES offers multiple scholarships for enrolled citizens or descendants of federally/state recognized American Indian Tribes, Alaska Native Villages, Native Hawaiians, Pacific Islanders, or Indigenous persons of Canada.</p>
+      <span class="award-badge">Varies</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://www.pilotinternational.org/grants-and-scholarships/" target="_blank">Becky Burrows Memorial Scholarship</a></h3>
+      <p class="desc">For students reentering the job market or beginning second careers in Pilot International mission-aligned fields.</p>
+      <span class="award-badge">Up to $1,000/yr</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://www.pilotinternational.org/grants-and-scholarships/" target="_blank">Bob King Co-Pilot Memorial Scholarship</a></h3>
+      <p class="desc">Based on community service, financial need, and academic success. Renewable up to 3 additional years. Two scholarships awarded each year.</p>
+      <span class="award-badge">Up to $1,500/yr</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://www.citizensbank.com/student-loans/scholarship.aspx" target="_blank">Citizens Bank Scholarship</a></h3>
+      <p class="desc">Monthly prize drawing and annual grand prize toward tuition. No essays required — enter to win.</p>
+      <span class="award-badge">Up to $15,000</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://www.courseyenterprises.com/scholarships" target="_blank">Coursey Enterprises</a></h3>
+      <p class="desc">Two scholarships per year (spring and fall) for first-year students. Requires personal essay and photo.</p>
+      <span class="award-badge">$250</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://www.va.gov/education/other-va-education-benefits/stem-scholarship/" target="_blank">Edith Nourse Rogers STEM Scholarship</a></h3>
+      <p class="desc">For eligible Veterans using the Post-9/11 GI Bill or Fry Scholarship dependents training in high-demand STEM fields.</p>
+      <span class="award-badge">Up to $30,000</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://fapscfoundation.org/scholarship-application" target="_blank">FAPSC Scholarship</a></h3>
+      <p class="desc">For qualifying students at FAPSC member schools pursuing career education. Based on applicant excellence.</p>
+      <span class="award-badge">$1,000</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://limeconnect.com/opportunities/scholarships-awards/" target="_blank">Google Lime Scholarship for Students with Disabilities</a></h3>
+      <p class="desc">For university students with disabilities pursuing computer science or a closely related technical degree enrolled full-time at a US or Canadian university.</p>
+      <span class="award-badge">Varies</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://www.iamcybersafe.org/s/academic-scholarships" target="_blank">(ISC)² Academic Scholarships</a></h3>
+      <p class="desc">Multiple scholarships for undergraduate and graduate students pursuing degrees in cybersecurity or information assurance, including dedicated awards for women (part of the Global 50x50 initiative) and the Security Congress Scholarship (conference pass + hotel). Awards are sent directly to the institution.</p>
+      <span class="award-badge">$1,000–$5,000 · Multiple Awards</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://www.iefa.org/scholarships/2303/Sarder_Scholarship_Program" target="_blank">NetCom Sarder Scholarship Program</a></h3>
+      <p class="desc">Monthly scholarship toward any public or live online class at NetCom for individuals beginning or advancing their IT career.</p>
+      <span class="award-badge">$2,500/month</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://www.iamcybersafe.org/s/academic-scholarships" target="_blank">Samantha Jennings-Jones Memorial Scholarship</a></h3>
+      <p class="desc">Established in memory of Sam to support women seeking to start or advance a career in cybersecurity. Applied to tuition, fees, books, and required materials.</p>
+      <span class="award-badge">$5,000</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://www.smartscholarship.org/smart?id=smart_index" target="_blank">SMART Scholarship-For-Service Program</a></h3>
+      <p class="desc">Full tuition, annual stipends, internships, and guaranteed DoD employment for undergraduate, master's, and doctoral STEM students.</p>
+      <span class="award-badge">Full Tuition + Stipend</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://www.hemophiliafed.org/scholarships/" target="_blank">WPBDF's Academic Scholarship</a></h3>
+      <p class="desc">For students with a parent, sibling, or child with a bleeding disorder. Click the link for more scholarship opportunities.</p>
+      <span class="award-badge">$3,000</span>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://scholarshipamerica.org/students/browse-scholarships/" target="_blank">Scholarship America</a></h3>
+      <p class="desc">A national nonprofit scholarship search platform offering access to hundreds of scholarships across fields of study. Browse and apply to opportunities matched to your background, interests, and program.</p>
+      <span class="award-badge">Varies · Multiple Awards</span>
+    </div>
+
+  </div>
+</section>
+
+<section class="section-block" id="pay">
+  <div class="section-header">
+    <div class="section-accent"></div>
+    <h2>How Else Can I Pay?</h2>
+  </div>
+  <div class="pay-section">
+    <h2>Additional Financing Options</h2>
+    <div class="pay-grid">
+      <div class="pay-card">
+        <h4>Federal Grants</h4>
+        <p>Federal grants, like the Pell Grant, provide need-based assistance that does not have to be repaid. Complete the FAFSA to determine your eligibility. Use ECPI University school code <strong>010198</strong>.<br><br><a href="https://studentaid.gov/h/apply-for-aid/fafsa" target="_blank">Apply at StudentAid.gov →</a></p>
+      </div>
+      <div class="pay-card">
+        <h4>Federal Student Loans</h4>
+        <p>Low-interest government loans often without a credit check or cosigner. Repayment typically defers until six months after graduation with flexible repayment plans. Complete the FAFSA using school code <strong>010198</strong>.</p>
+      </div>
+      <div class="pay-card">
+        <h4>ECPI Financial Assistance</h4>
+        <p>Review all of ECPI's borrowing options, including federal and private loans, and connect with a Financial Assistance advisor.<br><br><a href="https://www.ecpi.edu/financial-assistance" target="_blank">Explore Borrowing Options →</a></p>
+      </div>
+      <div class="pay-card">
+        <h4>Private Loans &amp; Smart Borrowing</h4>
+        <p>Banks, credit unions, and private lenders offer education loans. Thoroughly review interest rates and repayment terms. Remember: you can borrow less than the amount offered — speak with your advisor to borrow only what you need.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>ECPI University – Lake Mary Campus &nbsp;·&nbsp; Scholarship Resource Hub &nbsp;·&nbsp; <a href="https://www.ecpi.edu/financial-assistance" target="_blank">ECPI Financial Assistance</a></p>
+</footer>
+
+</body>
+</html>
